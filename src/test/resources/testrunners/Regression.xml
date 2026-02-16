@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Demo Qa Regression PW Suite" thread-count="3"
+       parallel="tests" verbose="4">
+
+    <listeners>
+        <listener
+                class-name="com.qa.listeners.ExtentReportListener" />
+    </listeners>
+
+    <test name="Demo Qa Home Page Test">
+        <classes>
+            <class name="com.qa.demoqa.tests.HomePageTest" />
+        </classes>
+    </test>
+
+    <test name="Demo Qa Login Page">
+        <classes>
+            <class name="com.qa.demoqa.tests.ElementPageTest" />
+        </classes>
+    </test>
+
+
+</suite>
