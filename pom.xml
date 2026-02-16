@@ -44,7 +44,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version> <configuration>
                 <suiteXmlFiles>
-                    <suiteXmlFile>$Regression.xml</suiteXmlFile>
+                    <suiteXmlFile>src/test/resources/testrunners/Regression.xml</suiteXmlFile>
                 </suiteXmlFiles>
             </configuration>
             </plugin>
