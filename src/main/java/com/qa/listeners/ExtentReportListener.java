@@ -59,6 +59,9 @@ public class ExtentReportListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        extent.flush(); // Generates the report
+        System.out.println("Test Suite execution finished. Generating Extent Report...");
+        if (extent != null) {
+            extent.flush(); // This is the command that creates the .html file
+        }
     }
 }

@@ -4,8 +4,6 @@ import com.microsoft.playwright.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.Base64;
 import java.util.Properties;
 
 public class PlayWrightFactory {
@@ -56,14 +54,14 @@ public class PlayWrightFactory {
         return getPage();
     }
 
-    public Properties initProp() throws RuntimeException {
+    public Properties initProp() throws IllegalArgumentException {
         try {
             try (FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties")) {
                 prop = new Properties();
                 prop.load(ip);
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
         return prop;
     }
