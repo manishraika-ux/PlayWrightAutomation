@@ -52,6 +52,7 @@ public class PlayWrightFactory {
         trBrowserContext.set(getBrowser().newContext());
         trPage.set(getBrowserContext().newPage());
         getPage().navigate(prop.getProperty("url"));
+        getPage().setDefaultTimeout(60000);
         return getPage();
     }
 
