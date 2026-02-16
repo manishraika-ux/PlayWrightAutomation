@@ -55,11 +55,12 @@ public class PlayWrightFactory {
         return getPage();
     }
 
-    public Properties initProp() throws IOException {
+    public Properties initProp() throws RuntimeException {
         try {
-            FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
-            prop = new Properties();
-            prop.load(ip);
+            try (FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties")) {
+                prop = new Properties();
+                prop.load(ip);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
