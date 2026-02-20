@@ -35,13 +35,13 @@ public class PlayWrightFactory {
         String browserName = prop.getProperty("browser").trim();
         switch (browserName.toLowerCase()) {
             case "chromium":
-                trBrowser.set(getPlayWright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+                trBrowser.set(getPlayWright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(true)));
                 break;
             case "firefox":
-                trBrowser.set(getPlayWright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+                trBrowser.set(getPlayWright().firefox().launch(new BrowserType.LaunchOptions().setHeadless(true)));
                 break;
             case "safari":
-                trBrowser.set(getPlayWright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+                trBrowser.set(getPlayWright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(true)));
                 break;
             default:
                 System.out.println("Incorrect Browser Type");
